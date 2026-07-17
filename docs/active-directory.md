@@ -19,10 +19,6 @@ The server has been promoted to a Domain Controller and provides Active Director
 
 ---
 
-
-
----
-
 # Organisational Units (OUs)
 
 The following custom Organizational Units have been created to organise Active Directory objects within the domain.
