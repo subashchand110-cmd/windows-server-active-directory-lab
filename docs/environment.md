@@ -55,11 +55,12 @@ This home lab is designed to develop practical skills in Windows Server administ
 - Active Directory Domain Services installed
 - Server promoted to Domain Controller
 - DNS configured
+- Windows 11 Client
+- Domain Join
 
 ## Planned
 
-- Windows 11 Client
-- Domain Join
+
 - DHCP Server
 - Group Policy
 - User Management

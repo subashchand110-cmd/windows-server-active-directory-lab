@@ -276,3 +276,130 @@ Computer Configuration policies should instead be linked to the Organizational U
 - Forcing Group Policy updates
 - Verifying policy application with `gpresult`
 - Troubleshooting GPO processing
+
+# Exercise 3 - Disable Control Panel and Settings
+
+## Objective
+
+Prevent standard domain users from accessing the Windows Control Panel and Settings application using Group Policy.
+
+---
+
+# Create the GPO
+
+Created a new Group Policy Object:
+
+```
+Employee - Disable Control Panel
+```
+
+Linked the GPO to:
+
+```
+Employee Accounts
+```
+
+Organizational Unit.
+
+---
+
+# Configure the Policy
+
+Navigated to:
+
+```
+User Configuration
+ └── Policies
+     └── Administrative Templates
+         └── Control Panel
+```
+
+Enabled the following policy:
+
+```
+Prohibit access to Control Panel and PC settings
+```
+
+Configuration:
+
+```
+Enabled
+```
+
+---
+
+# Testing
+
+Logged into:
+
+```
+MYDOMAIN\john.smith
+```
+
+Updated Group Policy:
+
+```cmd
+gpupdate /force
+```
+
+Verified applied policies:
+
+```cmd
+gpresult /r
+```
+
+Confirmed that the following GPOs were applied:
+
+```
+Employee Desktop Wallpaper
+Employee - Disable Control Panel
+```
+
+---
+
+# Verification
+
+Attempted to open:
+
+```
+Control Panel
+```
+
+Result:
+
+```
+Access denied due to Group Policy restrictions.
+```
+
+Attempted to open:
+
+```
+Windows Settings
+```
+
+Result:
+
+```
+Access blocked by Group Policy.
+```
+
+The restriction successfully prevented the standard user from modifying system settings.
+
+---
+
+# Key Learning
+
+Administrative Templates allow administrators to centrally manage Windows features without modifying local user permissions.
+
+This policy demonstrates how organizations can standardize user environments and prevent unauthorized configuration changes across all domain-joined computers.
+
+---
+
+# Skills Practiced
+
+- Creating User Group Policy Objects
+- Linking GPOs to Organizational Units
+- Configuring Administrative Template policies
+- Updating Group Policy with `gpupdate`
+- Verifying applied policies using `gpresult`
+- Testing user restrictions in a domain environment

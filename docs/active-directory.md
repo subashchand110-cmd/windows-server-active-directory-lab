@@ -80,6 +80,27 @@ The following custom Global Security Groups have been created.
 
 # Current Status
 
+###  Phase 1 - Active Directory Infrastructure
+- Installed Windows Server 2025
+- Promoted server to Domain Controller
+- Configured DNS
+- Created domain: `mydomain.com`
+- Created Organizational Units (OUs)
+- Created security groups
+- Created administrative and standard user accounts
+
+### Phase 2 - Domain Client Integration
+- Installed Windows 11 Pro client (`CLIENT01`)
+- Configured networking and DNS
+- Successfully joined `CLIENT01` to `mydomain.com`
+- Verified DNS resolution and Active Directory authentication
+- Logged in with domain administrator (`subash.admin`)
+- Logged in with standard domain user (`john.smith`)
+- Verified security group membership (`IT Support`)
+- Moved `CLIENT01` into the `Workstations` OU
+
+**Status:** Ready to begin Group Policy (GPO) implementation
+
 ## Completed
 
 - Installed Active Directory Domain Services
