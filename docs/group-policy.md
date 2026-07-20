@@ -516,3 +516,100 @@ This policy is commonly used in enterprise environments where users have defined
 - Applying security restrictions through Group Policy
 - Updating Group Policy with `gpupdate`
 - Verifying policy enforcement on a domain-joined client
+
+# Exercise 5 - Interactive Logon Message
+
+## Objective
+
+Configure an interactive logon message that is displayed before users can sign in to a domain-joined computer.
+
+---
+
+# Create the GPO
+
+Created a new Group Policy Object:
+
+```
+Workstations - Interactive Logon Message
+```
+
+Linked the GPO to:
+
+```
+Workstations
+```
+
+Organizational Unit.
+
+---
+
+# Configure the Policy
+
+Navigated to:
+
+```
+Computer Configuration
+ └── Policies
+     └── Windows Settings
+         └── Security Settings
+             └── Local Policies
+                 └── Security Options
+```
+
+Configured the following policies:
+
+### Interactive logon: Message title for users attempting to log on
+
+```
+MYDOMAIN Authorized Access
+```
+
+### Interactive logon: Message text for users attempting to log on
+
+```
+This computer is the property of MYDOMAIN.
+
+Authorized users only.
+
+All activities on this system may be monitored and recorded.
+
+By signing in, you acknowledge that you understand and accept these conditions.
+```
+
+---
+
+# Testing
+
+Updated Group Policy:
+
+```cmd
+gpupdate /force
+```
+
+Restarted CLIENT01.
+
+---
+
+# Verification
+
+Before the Windows sign-in screen appeared, the configured legal notice was displayed.
+
+Users were required to acknowledge the message before entering their credentials.
+
+---
+
+# Key Learning
+
+Interactive logon messages are configured through **Computer Configuration** because they are displayed before user authentication occurs.
+
+Since the GPO was linked to the **Workstations** Organizational Unit, it applied successfully to CLIENT01.
+
+---
+
+# Skills Practiced
+
+- Creating Computer Configuration Group Policy Objects
+- Configuring Security Options
+- Deploying enterprise logon banners
+- Understanding Computer Configuration policy processing
+- Verifying Computer GPO application
