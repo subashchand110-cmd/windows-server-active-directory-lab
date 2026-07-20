@@ -154,8 +154,125 @@ This explains why linking a User Configuration policy to the Workstations OU did
 
 ---
 
-# Next Steps
+# Exercise 2 - Applying a User GPO Successfully
 
-Create a new User GPO linked to the **Employee Accounts** OU to apply the desktop wallpaper successfully.
+## Objective
 
-Later in the lab, explore **Group Policy Loopback Processing**, which allows User Configuration settings to be applied based on the computer's Organizational Unit.
+Apply a desktop wallpaper to domain users using Group Policy linked to the correct Organizational Unit.
+
+---
+
+## Create the GPO
+
+Created a new Group Policy Object:
+
+```
+Employee Desktop Wallpaper
+```
+
+Linked the GPO to:
+
+```
+Employee Accounts
+```
+
+Organizational Unit.
+
+---
+
+## Configure the Policy
+
+Configured:
+
+```
+User Configuration
+ └── Policies
+     └── Administrative Templates
+         └── Desktop
+             └── Desktop
+                 └── Desktop Wallpaper
+```
+
+Settings:
+
+Wallpaper:
+
+```
+\\mydomain.com\SYSVOL\mydomain.com\Wallpaper\company-wallpaper.jpg
+```
+
+Style:
+
+```
+Fill
+```
+
+---
+
+## Testing
+
+Logged in as:
+
+```
+MYDOMAIN\john.smith
+```
+
+Updated Group Policy:
+
+```cmd
+gpupdate /force
+```
+
+Verified applied policies:
+
+```cmd
+gpresult /r
+```
+
+Result:
+
+```
+Applied Group Policy Objects
+
+Employee Desktop Wallpaper
+```
+
+The desktop wallpaper was successfully applied after logging back into the client computer.
+
+---
+
+# Outcome
+
+The wallpaper policy successfully applied because:
+
+- The policy is a **User Configuration** policy.
+- The GPO is linked to the **Employee Accounts** OU.
+- The user account (`john.smith`) resides in the **Employee Accounts** OU.
+
+---
+
+# Key Learning
+
+User Configuration policies are processed according to the location of the **user object** in Active Directory.
+
+Correct design:
+
+```
+Employee Accounts OU
+    ├── User Objects
+    └── User GPOs
+```
+
+Computer Configuration policies should instead be linked to the Organizational Unit containing the computer objects.
+
+---
+
+# Skills Practiced
+
+- Creating Group Policy Objects
+- Linking GPOs to Organizational Units
+- Configuring User Configuration policies
+- Using SYSVOL to distribute shared resources
+- Forcing Group Policy updates
+- Verifying policy application with `gpresult`
+- Troubleshooting GPO processing
