@@ -59,6 +59,7 @@ This allows the Domain Controller to resolve Active Directory records locally.
 |---------|------|
 | Windows 11 Host | Host Operating System |
 | SERVER2025-DC01 | Domain Controller |
+| CLIENT01 | Windows 11 domain client
 
 ---
 
@@ -66,7 +67,6 @@ This allows the Domain Controller to resolve Active Directory records locally.
 
 The following devices and services will be added as the lab grows:
 
-- Windows 11 Client
 - DHCP Server
 - Group Policy
 - File Server
@@ -76,6 +76,16 @@ The following devices and services will be added as the lab grows:
 
 ---
 
+## Client Systems
+
+### CLIENT01
+
+- Operating System: Windows 11 Pro
+- Computer Name: CLIENT01
+- Role: Domain Client
+- Status: Domain Joined (mydomain.com)
+
+---
 # Notes
 
 This document will be updated as additional virtual machines, services, and networking components are introduced.
