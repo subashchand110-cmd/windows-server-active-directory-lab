@@ -613,3 +613,117 @@ Since the GPO was linked to the **Workstations** Organizational Unit, it applied
 - Deploying enterprise logon banners
 - Understanding Computer Configuration policy processing
 - Verifying Computer GPO application
+
+# Exercise 6 - Password Policy and Account Lockout Policy
+
+## Objective
+
+Configure domain-wide password and account lockout policies to improve the security of Active Directory user accounts.
+
+---
+
+# Edit Default Domain Policy
+
+Opened:
+
+```
+Default Domain Policy
+```
+
+Navigated to:
+
+```
+Computer Configuration
+ └── Policies
+     └── Windows Settings
+         └── Security Settings
+             └── Account Policies
+```
+
+---
+
+# Password Policy
+
+Configured:
+
+| Policy | Value |
+|---------|------:|
+| Enforce password history | 5 passwords |
+| Maximum password age | 90 days |
+| Minimum password age | 1 day |
+| Minimum password length | 8 characters |
+| Password complexity | Enabled |
+| Reversible encryption | Disabled |
+
+---
+
+# Account Lockout Policy
+
+Configured:
+
+| Policy | Value |
+|---------|------:|
+| Account lockout threshold | 5 attempts |
+| Account lockout duration | 15 minutes |
+| Reset lockout counter | 15 minutes |
+
+---
+
+# Verification
+
+Updated Group Policy:
+
+```cmd
+gpupdate /force
+```
+
+Verified policy using:
+
+```cmd
+net accounts
+```
+
+Confirmed the configured password and lockout settings.
+
+---
+
+# Account Lockout Test
+
+Logged into CLIENT01.
+
+Attempted to sign in using an incorrect password five consecutive times.
+
+Result:
+
+```
+User account locked.
+```
+
+Unlocked the account using:
+
+```
+Active Directory Users and Computers
+```
+
+Verified successful login after unlocking.
+
+---
+
+# Key Learning
+
+Password Policy and Account Lockout Policy are domain-wide security settings.
+
+Unlike most Group Policy Objects, these settings are configured within the **Default Domain Policy** and apply across the entire Active Directory domain.
+
+These policies help protect against weak passwords and brute-force authentication attacks.
+
+---
+
+# Skills Practiced
+
+- Managing Default Domain Policy
+- Configuring Password Policy
+- Configuring Account Lockout Policy
+- Verifying domain policies using `net accounts`
+- Testing account lockout
+- Unlocking user accounts in Active Directory Users and Computers
