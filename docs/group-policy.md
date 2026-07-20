@@ -403,3 +403,116 @@ This policy demonstrates how organizations can standardize user environments and
 - Updating Group Policy with `gpupdate`
 - Verifying applied policies using `gpresult`
 - Testing user restrictions in a domain environment
+
+
+# Exercise 4 - Disable Command Prompt
+
+## Objective
+
+Prevent standard domain users from launching Command Prompt (`cmd.exe`) and executing batch scripts using Group Policy.
+
+---
+
+# Create the GPO
+
+Created a new Group Policy Object:
+
+```
+Employee - Disable Command Prompt
+```
+
+Linked the GPO to:
+
+```
+Employee Accounts
+```
+
+Organizational Unit.
+
+---
+
+# Configure the Policy
+
+Navigated to:
+
+```
+User Configuration
+ └── Policies
+     └── Administrative Templates
+         └── System
+```
+
+Enabled the following policy:
+
+```
+Prevent access to the command prompt
+```
+
+Configuration:
+
+```
+Enabled
+
+Disable the command prompt script processing:
+Yes
+```
+
+---
+
+# Testing
+
+Logged in as:
+
+```
+MYDOMAIN\john.smith
+```
+
+Updated Group Policy:
+
+```cmd
+gpupdate /force
+```
+
+Verified applied policies:
+
+```cmd
+gpresult /r
+```
+
+---
+
+# Verification
+
+Attempted to launch:
+
+```
+cmd.exe
+```
+
+Result:
+
+```
+The command prompt has been disabled by your administrator.
+```
+
+The standard domain user was unable to launch Command Prompt or execute command shell scripts.
+
+---
+
+# Key Learning
+
+Administrative Template policies provide centralized control over Windows features and applications.
+
+Restricting Command Prompt helps reduce unauthorized command-line access and limits the execution of scripts by standard users.
+
+This policy is commonly used in enterprise environments where users have defined roles and limited administrative privileges.
+
+---
+
+# Skills Practiced
+
+- Creating User Group Policy Objects
+- Configuring Administrative Template policies
+- Applying security restrictions through Group Policy
+- Updating Group Policy with `gpupdate`
+- Verifying policy enforcement on a domain-joined client
