@@ -66,7 +66,7 @@ During the AD CS Configuration Wizard, the following options were selected:
 
 After configuration, the Enterprise Root Certification Authority was successfully installed.
 
-> **Screenshot:** AD CS Configuration Wizard
+
 
 ---
 
@@ -95,7 +95,7 @@ Configuration:
 
 The policy was linked to the domain.
 
-> **Screenshot:** Auto-Enrollment GPO
+
 
 ---
 
@@ -119,7 +119,7 @@ certutil -store My
 
 The Personal store was empty.
 
-> **Screenshot:** Empty Personal certificate store
+
 
 ---
 
@@ -280,7 +280,7 @@ CLIENT01.mydomain.com
 
 The certificate appeared in the Local Computer Personal certificate store, confirming successful enrollment.
 
-> **Screenshot:** Successful computer certificate
+
 
 ---
 
@@ -338,18 +338,18 @@ During this phase several important concepts about Active Directory Certificate 
 
 # Outcome
 
-✔ Installed Active Directory Certificate Services
+ Installed Active Directory Certificate Services
 
-✔ Configured an Enterprise Root Certification Authority
+ Configured an Enterprise Root Certification Authority
 
-✔ Configured Certificate Auto-Enrollment
+ Configured Certificate Auto-Enrollment
 
-✔ Diagnosed certificate enrollment issues
+ Diagnosed certificate enrollment issues
 
-✔ Created and published a custom workstation certificate template
+ Created and published a custom workstation certificate template
 
-✔ Successfully enrolled CLIENT01 with a computer certificate
+ Successfully enrolled CLIENT01 with a computer certificate
 
-✔ Verified certificate installation using CertUtil
+ Verified certificate installation using CertUtil
 
 This phase introduced enterprise Public Key Infrastructure (PKI) into the lab, enabling secure certificate-based authentication for domain-joined computers and providing the foundation for future services such as HTTPS, VPN authentication, Remote Desktop certificates, and secure wireless authentication.
