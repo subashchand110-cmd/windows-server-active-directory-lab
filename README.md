@@ -170,6 +170,7 @@ Detailed documentation for each phase is available in the **docs** directory.
 | `group-policy.md` | Group Policy configuration |
 | `file-server.md` | File Server, NTFS permissions and SMB shares |
 | `drive-mapping.md` | Drive Mapping with Group Policy Preferences |
+| `dhcp.md` | DHCP server integration with Active Directory and configured with an IPv4 scope |
 ---
 
 # Screenshots
@@ -184,6 +185,7 @@ The repository includes screenshots demonstrating:
 - NTFS Permissions
 - SMB Shares
 - PowerShell Verification
+- DHCP Server
 
 ---
 
@@ -229,3 +231,4 @@ This lab demonstrates practical experience with:
 - File Server Administration
 - PowerShell Administration
 - Enterprise Windows Infrastructure
+- DHCP Server
