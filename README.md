@@ -1,6 +1,8 @@
-# Windows Server Active Directory Lab
+# Windows Server Active Directory Home Lab
 
-A hands-on Windows Server 2025 Active Directory home lab built in Oracle VirtualBox to gain practical experience with enterprise Windows Server administration.
+A hands-on Windows Server home lab built using **VirtualBox** to gain practical experience with enterprise Windows Server administration, Active Directory, Group Policy, file services, networking, and Public Key Infrastructure (PKI).
+
+The lab follows a phased approach, with each phase focusing on a core Windows Server technology commonly found in enterprise environments.
 
 ---
 
@@ -13,179 +15,240 @@ A hands-on Windows Server 2025 Active Directory home lab built in Oracle Virtual
 | Server OS | Windows Server 2025 Standard Evaluation |
 | Client OS | Windows 11 Pro |
 | Domain | mydomain.com |
+| Domain Controller | SERVER2025-DC01 |
+| Client | CLIENT01 |
 
 ---
 
-## Lab Topology
+# Lab Objectives
 
-```
-                    Internet
-                        │
-                Windows 11 Host
-                        │
-                Oracle VirtualBox
-                        │
-        ┌───────────────────────────┐
-        │                           │
-SERVER2025-DC01              CLIENT01
-Domain Controller            Windows 11 Pro
-AD DS / DNS                  Domain Joined
-File Server
-```
+The purpose of this lab is to gain practical experience with enterprise Windows Server administration by implementing and managing a complete Active Directory environment.
+
+Technologies implemented include:
+
+- Active Directory Domain Services (AD DS)
+- DNS
+- DHCP
+- Group Policy
+- Organizational Unit (OU) Management
+- User and Group Administration
+- File Server
+- NTFS Permissions
+- SMB File Sharing
+- Drive Mapping using Group Policy Preferences
+- Active Directory Certificate Services (AD CS)
+- Public Key Infrastructure (PKI)
 
 ---
 
-# Completed Phases
+# Lab Phases
 
-##  Phase 1 – Active Directory Infrastructure
+## Phase 1 – Active Directory Domain Services
 
-### Completed
+Implemented:
 
 - Installed Windows Server 2025
 - Promoted server to Domain Controller
-- Configured Active Directory Domain Services (AD DS)
 - Configured DNS
 - Created Organizational Units (OUs)
-- Created users and security groups
+- Created domain users
+- Created security groups
 - Joined Windows 11 client to the domain
-- Verified domain authentication
 
-### Skills Demonstrated
+Documentation:
 
-- Active Directory Administration
-- DNS Configuration
-- User & Group Management
-- Domain Join
-- Organizational Unit Management
+- [Active Directory Setup](docs/active-directory.md)
 
 ---
 
-##  Phase 2 – Domain Management
+## Phase 2 – Domain Management
 
-### Completed
+Implemented:
 
-- Created administrative and standard user accounts
-- Organized users into departmental OUs
-- Created departmental security groups
-- Verified authentication and group membership
-- Tested DNS functionality
-- Verified client connectivity
+- User administration
+- Group management
+- Organizational Unit management
+- Active Directory best practices
 
-### Skills Demonstrated
+Documentation:
 
-- Active Directory Users and Computers
-- Security Groups
-- OU Administration
-- Domain Authentication
-- Windows Networking
+- [Domain Management](docs/domain-management.md)
 
 ---
 
-##  Phase 3 – Group Policy
+## Phase 3 – Group Policy
 
-### Completed
+Implemented:
 
-Implemented multiple Group Policy Objects (GPOs):
-
-- Desktop Wallpaper Deployment
-- Disable Control Panel
-- Disable Command Prompt
-- Interactive Logon Message
+- Desktop wallpaper deployment
+- Control Panel restrictions
+- Command Prompt restrictions
+- Interactive logon banner
 - Password Policy
 - Account Lockout Policy
 
-### Skills Demonstrated
+Documentation:
 
-- Group Policy Management
-- User Configuration
-- Computer Configuration
+- [Group Policy](docs/group-policy.md)
+
+---
+
+## Phase 4 – File Server
+
+Implemented:
+
+- Secondary storage configuration
+- NTFS permissions
+- Departmental folders
+- SMB shares
+- Access testing
+
+Departments:
+
+- HR
+- Finance
+- Sales
+- IT
+- Public
+
+Documentation:
+
+- [File Server](docs/file-server.md)
+
+---
+
+## Phase 5 – Drive Mapping
+
+Implemented:
+
+- Group Policy Preferences
+- Automatic drive mapping
+- Item-Level Targeting
+- Department-specific drive mappings
+
+Mapped Drives:
+
+| Drive | Department |
+|-------|------------|
+| P: | Public |
+| H: | Human Resources |
+| F: | Finance |
+| S: | Sales |
+| I: | IT Support |
+
+Documentation:
+
+- [Drive Mapping](docs/drive-mapping.md)
+
+---
+
+## Phase 6 – DHCP
+
+Implemented:
+
+- DHCP Server role
+- DHCP Scope
+- DNS options
+- Dynamic IP assignment
+- Client lease verification
+
+Documentation:
+
+- [DHCP](docs/dhcp.md)
+
+---
+
+## Phase 7 – Active Directory Certificate Services (AD CS)
+
+Implemented:
+
+- Installed Active Directory Certificate Services
+- Configured an Enterprise Root Certification Authority
+- Configured Certificate Auto-Enrollment
+- Published certificate templates
+- Issued computer certificates to domain-joined clients
+- Verified certificate enrollment using CertUtil
+
+### Troubleshooting Highlights
+
+During implementation, the default **Computer** certificate template was not available to CLIENT01.
+
+Troubleshooting included:
+
+- Verifying domain connectivity
+- Verifying Enterprise CA configuration
+- Testing CA connectivity
+- Reviewing certificate template permissions
+- Manual certificate enrollment testing
+- Diagnosing certificate template issues using CertUtil
+
+The issue was resolved by duplicating the default **Computer** template, publishing it as a new **Workstation Computer** template, and successfully enrolling CLIENT01 with a computer certificate.
+
+Documentation:
+
+- [Active Directory Certificate Services](docs/ad-cs.md)
+
+---
+
+# Skills Demonstrated
+
+Throughout this lab, the following enterprise technologies were implemented and configured:
+
+### Identity & Access Management
+
+- Active Directory Domain Services
+- Organizational Units
+- User Management
+- Security Groups
+- Domain Administration
+
+### Group Policy
+
+- Security Policies
+- Administrative Templates
 - Password Policies
 - Account Lockout Policies
-- SYSVOL Management
-- Group Policy Processing
-- gpupdate
-- gpresult
+- Group Policy Preferences
 
----
+### Networking
 
-##  Phase 4 – File Server
+- DNS
+- DHCP
+- Domain Name Resolution
+- Dynamic Address Assignment
 
-### Completed
-
-- Added dedicated data volume (D:)
-- Created departmental folders
-- Configured NTFS permissions
-- Implemented Role-Based Access Control (RBAC)
-- Created SMB shares
-- Verified SMB shares using PowerShell
-
-### Folder Structure
-
-```
-D:\
-└── Shares
-    ├── HR
-    ├── Finance
-    ├── Sales
-    ├── IT
-    └── Public
-```
-
-### Technologies
+### File Services
 
 - NTFS Permissions
-- SMB File Sharing
-- Windows File Server
-- PowerShell (`Get-SmbShare`)
-- Active Directory Security Groups
+- SMB File Shares
+- Departmental File Access
+- Drive Mapping
 
----
-##  Phase 5 – Drive Mapping
+### Public Key Infrastructure (PKI)
 
-### Completed
+- Active Directory Certificate Services
+- Enterprise Root Certification Authority
+- Certificate Templates
+- Certificate Auto-Enrollment
+- Certificate Troubleshooting
 
-- Created Group Policy Preferences for network drive mapping
-- Configured Public drive for all domain users
-- Configured department drives using Item-Level Targeting
-- Verified automatic drive mapping on CLIENT01
-- Confirmed users only received drives based on security group membership
+### Windows Administration
 
-### Technologies
-
-- Group Policy Preferences (GPP)
-- Drive Maps
-- Item-Level Targeting
-- Active Directory Security Groups
-
----
-
-# Documentation
-
-Detailed documentation for each phase is available in the **docs** directory.
-
-| Document | Description |
-|----------|-------------|
-| `active-directory.md` | Active Directory configuration |
-| `network.md` | Network configuration |
-| `group-policy.md` | Group Policy configuration |
-| `file-server.md` | File Server, NTFS permissions and SMB shares |
-| `drive-mapping.md` | Drive Mapping with Group Policy Preferences |
-| `dhcp.md` | DHCP server integration with Active Directory and configured with an IPv4 scope |
----
-
-# Screenshots
-
-The repository includes screenshots demonstrating:
-
-- Active Directory Users and Computers
-- DNS Manager
+- Server Roles and Features
+- Computer Management
+- MMC Consoles
 - Group Policy Management
-- Windows Security Policies
-- File Server Configuration
-- NTFS Permissions
-- SMB Shares
-- PowerShell Verification
-- DHCP Server
+- Active Directory Users and Computers
+- Certification Authority
+- Certificate Templates Console
+
+### Troubleshooting
+
+- Group Policy troubleshooting
+- Certificate enrollment diagnostics
+- CertUtil
+- Network connectivity verification
+- Active Directory diagnostics
 
 ---
 
@@ -193,42 +256,39 @@ The repository includes screenshots demonstrating:
 
 - Windows Server 2025
 - Windows 11 Pro
-- Active Directory Domain Services (AD DS)
-- DNS
-- Group Policy
-- NTFS Permissions
-- SMB File Sharing
-- PowerShell
 - Oracle VirtualBox
+- Active Directory Domain Services
+- DNS
+- DHCP
+- Group Policy
+- Active Directory Certificate Services
+- SMB
+- NTFS
+- PowerShell
+- Command Prompt
+- CertUtil
+- MMC
 
 ---
 
 # Future Enhancements
 
-- Drive Mapping using Group Policy Preferences
-- Folder Redirection
-- DFS Namespace
-- File Server Resource Manager (FSRM)
-- Roaming Profiles
-- Windows Server Backup
-- DHCP Server
-- WSUS
-- Certificate Services (AD CS)
-- Remote Desktop Services
+Planned additions to the lab include:
+
+- Windows Server Update Services (WSUS)
+- Windows Deployment Services (WDS)
+- DFS Namespace & Replication
+- Print Server
+- Network Policy Server (NPS)
+- Active Directory Federation Services (AD FS)
+- PowerShell automation
 - Windows Admin Center
+- Monitoring and Event Logging
 
 ---
 
-# Learning Outcomes
+# Learning Outcome
 
-This lab demonstrates practical experience with:
+This project provided practical experience deploying and managing an enterprise Windows Server environment from the ground up.
 
-- Windows Server Administration
-- Active Directory
-- Group Policy
-- Identity & Access Management (IAM)
-- Role-Based Access Control (RBAC)
-- File Server Administration
-- PowerShell Administration
-- Enterprise Windows Infrastructure
-- DHCP Server
+The lab covers identity management, security policies, networking, file services, certificate services, and enterprise troubleshooting, closely reflecting the responsibilities of a Windows Server or Systems Administrator.
