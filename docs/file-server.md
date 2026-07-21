@@ -143,3 +143,19 @@ Include screenshots of:
 - Active Directory Security Groups
 - Role-Based Access Control (RBAC)
 - PowerShell Administration
+
+## Access Verification
+
+Network access was tested from the Windows 11 domain-joined client (`CLIENT01`).
+
+### Validation Performed
+
+- Successfully connected to the file server using SMB.
+- Verified users could access only their assigned departmental share.
+- Confirmed unauthorized access was denied.
+- Created and modified a test file within the authorized share.
+- Verified NTFS permissions correctly enforced Role-Based Access Control (RBAC).
+
+### Result
+
+The file server successfully enforced access based on Active Directory security group membership while allowing all authenticated users to discover available SMB shares.

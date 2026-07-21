@@ -140,6 +140,24 @@ D:\
 - Active Directory Security Groups
 
 ---
+##  Phase 5 – Drive Mapping
+
+### Completed
+
+- Created Group Policy Preferences for network drive mapping
+- Configured Public drive for all domain users
+- Configured department drives using Item-Level Targeting
+- Verified automatic drive mapping on CLIENT01
+- Confirmed users only received drives based on security group membership
+
+### Technologies
+
+- Group Policy Preferences (GPP)
+- Drive Maps
+- Item-Level Targeting
+- Active Directory Security Groups
+
+---
 
 # Documentation
 
@@ -151,7 +169,7 @@ Detailed documentation for each phase is available in the **docs** directory.
 | `network.md` | Network configuration |
 | `group-policy.md` | Group Policy configuration |
 | `file-server.md` | File Server, NTFS permissions and SMB shares |
-
+| `drive-mapping.md` | Drive Mapping with Group Policy Preferences |
 ---
 
 # Screenshots
