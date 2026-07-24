@@ -42,6 +42,8 @@ Technologies implemented include:
 - Windows Server Backup
 - Backup and Disaster Recovery
 - Distributed File System (DFS) Namespaces
+- Network Policy Server (NPS)
+- RADIUS Authentication
 ---
 
 # Lab Phases
@@ -252,6 +254,23 @@ Documentation:
 - [DFS Namespace](docs/dfs-namespace.md)
 
 ---
+## Phase 11 – Network Policy Server (NPS)
+
+Implemented:
+
+- Installed the Network Policy Server role
+- Registered NPS in Active Directory
+- Configured a simulated RADIUS Client
+- Created a Connection Request Policy
+- Created a Network Policy
+- Configured Active Directory-based authentication
+- Simulated enterprise RADIUS authentication
+
+Documentation:
+
+- [Network Policy Server](docs/network-policy-server.md)
+
+---
 
 # Skills Demonstrated
 
@@ -323,6 +342,15 @@ Throughout this lab, the following enterprise technologies were implemented and 
 - Folder Targets
 - Centralized File Access
 
+### Network Authentication
+
+- Network Policy Server (NPS)
+- RADIUS Authentication
+- Connection Request Policies
+- Network Policies
+- Active Directory Authentication
+- Authentication & Authorization
+
 ### Windows Administration
 
 - Server Roles and Features
@@ -334,6 +362,7 @@ Throughout this lab, the following enterprise technologies were implemented and 
 - Certificate Templates Console
 - Windows Server Update Services Console
 - Windows Server Backup
+- Network Policy Server
 
 ### Troubleshooting
 
@@ -374,6 +403,8 @@ Throughout this lab, the following enterprise technologies were implemented and 
 - Windows Server Backup
 - Backup and Disaster Recovery
 - Distributed File System (DFS) Namespaces
+- Network Policy Server (NPS)
+- RADIUS
 
 ---
 
@@ -381,9 +412,7 @@ Throughout this lab, the following enterprise technologies were implemented and 
 
 Planned additions to the lab include:
 
-- Windows Deployment Services (WDS)
 - Print Server
-- Network Policy Server (NPS)
 - Active Directory Federation Services (AD FS)
 - Windows Admin Center
 - PowerShell automation
@@ -395,4 +424,4 @@ Planned additions to the lab include:
 
 This project provided practical experience deploying and managing an enterprise Windows Server environment from the ground up.
 
-The completed lab demonstrates enterprise identity management, Group Policy administration, networking services, centralized file services, Public Key Infrastructure (PKI), Windows Server Update Services (WSUS), backup and disaster recovery, and enterprise troubleshooting. Together, these technologies closely reflect the responsibilities of a Windows Server or Systems Administrator in a production environment.
+The completed lab demonstrates enterprise identity management, Group Policy administration, networking services, centralized file services, Public Key Infrastructure (PKI), Windows Server Update Services (WSUS), backup and disaster recovery, Distributed File System (DFS), and Network Policy Server (NPS). Together, these technologies closely reflect the responsibilities of a Windows Server or Systems Administrator in a production environment.
