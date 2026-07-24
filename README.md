@@ -373,6 +373,7 @@ Throughout this lab, the following enterprise technologies were implemented and 
 - Enterprise Patch Management
 - Windows Server Backup
 - Backup and Disaster Recovery
+- Distributed File System (DFS) Namespaces
 
 ---
 
@@ -381,7 +382,6 @@ Throughout this lab, the following enterprise technologies were implemented and 
 Planned additions to the lab include:
 
 - Windows Deployment Services (WDS)
-- DFS Namespace & Replication
 - Print Server
 - Network Policy Server (NPS)
 - Active Directory Federation Services (AD FS)
