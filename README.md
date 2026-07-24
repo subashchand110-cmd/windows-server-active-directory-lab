@@ -38,7 +38,9 @@ Technologies implemented include:
 - Drive Mapping using Group Policy Preferences
 - Active Directory Certificate Services (AD CS)
 - Public Key Infrastructure (PKI)
-
+- Windows Server Update Services (WSUS)
+- Windows Server Backup
+- Backup and Disaster Recovery
 ---
 
 # Lab Phases
@@ -217,6 +219,24 @@ Documentation:
 
 - [Windows Server Update Services (WSUS)](docs/wsus.md)
 ---
+## Phase 9 – Windows Server Backup
+
+Implemented:
+
+- Installed Windows Server Backup
+- Configured dedicated backup storage
+- Performed a Full Server Backup
+- Configured scheduled daily backups
+- Verified backup completion
+- Tested file recovery
+- Reviewed System State recovery
+
+Documentation:
+
+- [Windows Server Backup](docs/windows-server-backup.md)
+
+---
+
 # Skills Demonstrated
 
 Throughout this lab, the following enterprise technologies were implemented and configured:
@@ -259,6 +279,15 @@ Throughout this lab, the following enterprise technologies were implemented and 
 - Certificate Auto-Enrollment
 - Certificate Troubleshooting
 
+### Backup & Disaster Recovery
+
+- Windows Server Backup
+- Full Server Backups
+- Scheduled Backups
+- File Recovery
+- System State Recovery
+- Disaster Recovery Planning
+
 ### Windows Server Update Services (WSUS)
 
 - WSUS Installation and Configuration
@@ -280,6 +309,7 @@ Throughout this lab, the following enterprise technologies were implemented and 
 - Certification Authority
 - Certificate Templates Console
 - Windows Server Update Services Console
+- Windows Server Backup
 
 ### Troubleshooting
 
@@ -292,6 +322,9 @@ Throughout this lab, the following enterprise technologies were implemented and 
 - Client-side targeting
 - Windows Update policy troubleshooting
 - WSUS synchronization
+- Backup verification
+- File recovery testing
+- Backup scheduling
 
 
 ---
@@ -314,6 +347,8 @@ Throughout this lab, the following enterprise technologies were implemented and 
 - MMC
 - Windows Server Update Services (WSUS)
 - Enterprise Patch Management
+- Windows Server Backup
+- Backup and Disaster Recovery
 
 ---
 
@@ -321,7 +356,6 @@ Throughout this lab, the following enterprise technologies were implemented and 
 
 Planned additions to the lab include:
 
-- Windows Server Backup
 - Windows Deployment Services (WDS)
 - DFS Namespace & Replication
 - Print Server
@@ -337,4 +371,4 @@ Planned additions to the lab include:
 
 This project provided practical experience deploying and managing an enterprise Windows Server environment from the ground up.
 
-The completed lab demonstrates enterprise identity management, Group Policy administration, networking services, centralized file services, Public Key Infrastructure (PKI), Windows Server Update Services (WSUS), and enterprise troubleshooting. Together, these technologies reflect many of the day-to-day responsibilities of a Windows Server or Systems Administrator in a production environment.
+The completed lab demonstrates enterprise identity management, Group Policy administration, networking services, centralized file services, Public Key Infrastructure (PKI), Windows Server Update Services (WSUS), backup and disaster recovery, and enterprise troubleshooting. Together, these technologies closely reflect the responsibilities of a Windows Server or Systems Administrator in a production environment.

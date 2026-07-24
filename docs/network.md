@@ -88,4 +88,4 @@ The following devices and services will be added as the lab grows:
 ---
 # Notes
 
-This document will be updated as additional virtual machines, services, and networking components are introduced.
+This document will be updated as additional virtual machines, services, and networking components are added.
