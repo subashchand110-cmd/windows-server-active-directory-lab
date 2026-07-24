@@ -41,6 +41,7 @@ Technologies implemented include:
 - Windows Server Update Services (WSUS)
 - Windows Server Backup
 - Backup and Disaster Recovery
+- Distributed File System (DFS) Namespaces
 ---
 
 # Lab Phases
@@ -236,6 +237,21 @@ Documentation:
 - [Windows Server Backup](docs/windows-server-backup.md)
 
 ---
+## Phase 10 – DFS Namespace
+
+Implemented:
+
+- Installed DFS Namespaces
+- Created a Domain-based DFS Namespace
+- Added departmental folder targets
+- Verified namespace access from CLIENT01
+- Validated existing NTFS and share permissions through the namespace
+
+Documentation:
+
+- [DFS Namespace](docs/dfs-namespace.md)
+
+---
 
 # Skills Demonstrated
 
@@ -298,6 +314,14 @@ Throughout this lab, the following enterprise technologies were implemented and 
 - Windows Update Group Policy
 - Windows Update Client Reporting
 - Enterprise Patch Management
+
+### Enterprise File Services
+
+- Distributed File System (DFS)
+- Domain-based Namespaces
+- Namespace Management
+- Folder Targets
+- Centralized File Access
 
 ### Windows Administration
 
