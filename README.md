@@ -1,6 +1,6 @@
 # Windows Server Active Directory Home Lab
 
-A hands-on Windows Server home lab built using **VirtualBox** to gain practical experience with enterprise Windows Server administration, Active Directory, Group Policy, file services, networking, and Public Key Infrastructure (PKI).
+A hands-on Windows Server home lab built using **Oracle VirtualBox** to gain practical experience with enterprise Windows Server administration, Active Directory, Group Policy, networking, file services, Public Key Infrastructure (PKI), and centralized Windows Update management.
 
 The lab follows a phased approach, with each phase focusing on a core Windows Server technology commonly found in enterprise environments.
 
@@ -189,7 +189,34 @@ Documentation:
 - [Active Directory Certificate Services](docs/ad-cs.md)
 
 ---
+## Phase 8 – Windows Server Update Services (WSUS)
 
+Implemented centralized Windows Update management using Windows Server Update Services.
+
+Configured:
+
+- WSUS Server Role
+- Windows Internal Database (WID)
+- Dedicated update storage (D:\WSUS)
+- Microsoft Update synchronization
+- Products and classifications
+- Computer groups
+- Client-side targeting
+- Group Policy integration
+- Windows Update client reporting
+
+Verified:
+
+- Successful synchronization with Microsoft Update
+- CLIENT01 reporting to WSUS
+- Automatic assignment to the Workstations computer group
+- Successful client status reporting through WSUS
+
+Documentation:
+
+
+- [Windows Server Update Services (WSUS)](docs/wsus.md)
+---
 # Skills Demonstrated
 
 Throughout this lab, the following enterprise technologies were implemented and configured:
@@ -232,6 +259,17 @@ Throughout this lab, the following enterprise technologies were implemented and 
 - Certificate Auto-Enrollment
 - Certificate Troubleshooting
 
+### Windows Server Update Services (WSUS)
+
+- WSUS Installation and Configuration
+- Microsoft Update Synchronization
+- Products and Classifications
+- Computer Groups
+- Client-side Targeting
+- Windows Update Group Policy
+- Windows Update Client Reporting
+- Enterprise Patch Management
+
 ### Windows Administration
 
 - Server Roles and Features
@@ -241,6 +279,7 @@ Throughout this lab, the following enterprise technologies were implemented and 
 - Active Directory Users and Computers
 - Certification Authority
 - Certificate Templates Console
+- Windows Server Update Services Console
 
 ### Troubleshooting
 
@@ -249,6 +288,11 @@ Throughout this lab, the following enterprise technologies were implemented and 
 - CertUtil
 - Network connectivity verification
 - Active Directory diagnostics
+- WSUS client registration
+- Client-side targeting
+- Windows Update policy troubleshooting
+- WSUS synchronization
+
 
 ---
 
@@ -268,6 +312,8 @@ Throughout this lab, the following enterprise technologies were implemented and 
 - Command Prompt
 - CertUtil
 - MMC
+- Windows Server Update Services (WSUS)
+- Enterprise Patch Management
 
 ---
 
@@ -275,14 +321,14 @@ Throughout this lab, the following enterprise technologies were implemented and 
 
 Planned additions to the lab include:
 
-- Windows Server Update Services (WSUS)
+- Windows Server Backup
 - Windows Deployment Services (WDS)
 - DFS Namespace & Replication
 - Print Server
 - Network Policy Server (NPS)
 - Active Directory Federation Services (AD FS)
-- PowerShell automation
 - Windows Admin Center
+- PowerShell automation
 - Monitoring and Event Logging
 
 ---
@@ -291,4 +337,4 @@ Planned additions to the lab include:
 
 This project provided practical experience deploying and managing an enterprise Windows Server environment from the ground up.
 
-The lab covers identity management, security policies, networking, file services, certificate services, and enterprise troubleshooting, closely reflecting the responsibilities of a Windows Server or Systems Administrator.
+The completed lab demonstrates enterprise identity management, Group Policy administration, networking services, centralized file services, Public Key Infrastructure (PKI), Windows Server Update Services (WSUS), and enterprise troubleshooting. Together, these technologies reflect many of the day-to-day responsibilities of a Windows Server or Systems Administrator in a production environment.
